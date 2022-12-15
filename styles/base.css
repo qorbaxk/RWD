@@ -8,9 +8,11 @@ body *::after {
   box-sizing: border-box;
 }
 
-[class] {
+/* 클래스만 있는 경우에 스타일 하고싶을 때 사용
+지금은 normalize 파일로 인해 초기화 되므로 안 써도 괜찮음 */
+/* [class] {
   margin: 0;
-}
+} */
 
 a {
   color: inherit;
