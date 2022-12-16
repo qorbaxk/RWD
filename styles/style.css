@@ -32,10 +32,11 @@
   justify-content: flex-end;
 }
 /* 공통 검색 폼 */
-/* input[type="search"] {
+/* 사파리에서 검색 폼이 border-radius가 마음대로 지정되는 것을 방지 */
+input[type="search"] {
   -webkit-appearance: none;
   appearance: none;
-} */
+}
 
 .searchForm__group {
   display: flex;
