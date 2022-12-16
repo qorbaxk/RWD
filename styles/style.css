@@ -81,6 +81,13 @@ input[type="search"] {
   color: var(--secondary-color);
   border: 1px solid currentColor;
 }
+/* 공통 메인 메뉴 */
+.menu__link {
+  display: block;
+  padding: var(--spacing-xs);
+  font-size: var(--text-md);
+  font-weight: 700;
+}
 
 /* 모바일 디바이스 (Mobile Device) */
 @media (min-width: 320px) and (max-width: 768px) {
@@ -99,7 +106,7 @@ input[type="search"] {
   .searchForm__group .formInput {
     flex-grow: 1;
   }
-  /* 모바일 메뉴 제어 버튼 시작 */
+  /* 모바일 메뉴 제어 버튼 */
   .buttonWrapper {
     padding: var(--spacing-xxs);
     overflow: hidden;
@@ -127,6 +134,7 @@ input[type="search"] {
     border-radius: var(--spacing-xxs);
     left: 0;
     transition: all 200ms;
+    pointer-events: none;
   }
 
   .button--burgerBarTop {
@@ -156,7 +164,27 @@ input[type="search"] {
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
   }
-  /* 모바일 메뉴 제어 버튼 종료 */
+  
+  /* 모바일 메인 메뉴 */
+  .menu__list{
+    background: var(--white-opacity);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    transform: translateX(-150%);
+    padding: var(--spacing-lg);
+  }
+  .menu.is--active .menu__list{
+    transform: none;
+  }
+  .menu__item {
+    border-bottom: 1px solid var(--silver);
+  }
+
 }
 
 /* 데스크탑 디바이스 (Desktop Device) */
@@ -204,7 +232,6 @@ input[type="search"] {
     padding: var(--spacing-md);
   }
   .menu__link{
-    display: block;
     color: var(--white);
     font-size: 1.2rem;
     font-weight: 700;
