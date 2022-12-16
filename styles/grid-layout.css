@@ -1,0 +1,72 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.group1{
+  background: gold;
+}
+.group2{
+  background: rgb(61, 206, 45);
+}
+.group3{
+  background: rgb(226, 108, 30);
+}
+.group4{
+  background: rgb(19, 125, 97);
+}
+.group5{
+  background: rgb(12, 12, 99);
+}
+.group6{
+  background: rgb(94, 18, 82);
+}
+.group7{
+  background: rgb(87, 255, 140);
+}
+.group8{
+  background: rgb(232, 139, 255);
+}
+.group9{
+  background: rgb(30, 190, 180);
+}
+.group10{
+  background: rgb(255, 172, 95);
+}
+.group11{
+  background: rgb(255, 252, 238);
+}
+.group12{
+  background: rgb(191, 29, 255);
+}
+.container{
+  background: silver;
+  border: 1px solid red;
+  display: grid;
+  grid-template-rows: auto;
+  padding: 24px;
+  /* 너비가 늘어남 */
+  /* gap: 24px; */
+}
+[class*="group"]{
+  height: 150px;
+}
+/* 스몰 디바이스 */
+@media (max-width:767px){
+  .container{
+    grid-template-columns: 1fr;
+  }
+}
+/* 미디엄 디바이스 */
+@media (min-width:768px){
+  .container{
+    grid-template-columns: 1fr 1fr ;
+  }
+}
+/* 라지 디바이스 */
+@media (min-width:1280px){
+  .container{
+    grid-template-columns: repeat(4, 1fr) ;
+  }
+}
