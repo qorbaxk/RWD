@@ -13,29 +13,29 @@
         }
       });
     
-      // 모바일 메뉴열기 버튼 누를 때 is--active 토글 및 aria-label 변경
-      var btn = document.querySelector('.button--burger');
-      var menu = document.querySelector('.menu');
-      var menuList = menu.querySelector('.menu__list');
-      var menuListLinks = menuList.querySelectorAll('a');
-      var firstItem = menu.querySelector('.menu__list li:first-child a');
-      var lastItem = menu.querySelector('.menu__list li:last-child a');
-      var video = document.querySelector('.news__video');
+      // // 모바일 메뉴열기 버튼 누를 때 is--active 토글 및 aria-label 변경
+      // var btn = document.querySelector('.button--burger');
+      // var menu = document.querySelector('.menu');
+      // var menuList = menu.querySelector('.menu__list');
+      // var menuListLinks = menuList.querySelectorAll('a');
+      // var firstItem = menu.querySelector('.menu__list li:first-child a');
+      // var lastItem = menu.querySelector('.menu__list li:last-child a');
+      // var video = document.querySelector('.news__video');
     
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        btn.classList.toggle('is--active');
-        if (btn.classList.contains('is--active')) {
-          btn.setAttribute('aria-label', '메뉴 닫기');
-          // 메뉴 열기 버튼 최초 클릭 시 트랜지션 설정
-          menuList.style.cssText = 'transition:all 350ms ease-in-out';
-          keyboardTrapInMenu();
-        } else {
-          btn.setAttribute('aria-label', '메뉴 열기');
-          keyboardUntrapInMenu();
-        }
-        menu.classList.toggle('is--active');
-      });
+      // btn.addEventListener('click', function (e) {
+      //   e.preventDefault();
+      //   btn.classList.toggle('is--active');
+      //   if (btn.classList.contains('is--active')) {
+      //     btn.setAttribute('aria-label', '메뉴 닫기');
+      //     // 메뉴 열기 버튼 최초 클릭 시 트랜지션 설정
+      //     menuList.style.cssText = 'transition:all 350ms ease-in-out';
+      //     keyboardTrapInMenu();
+      //   } else {
+      //     btn.setAttribute('aria-label', '메뉴 열기');
+      //     keyboardUntrapInMenu();
+      //   }
+      //   menu.classList.toggle('is--active');
+      // });
     
       /* -------------------------------------------------------------------------- */
     
