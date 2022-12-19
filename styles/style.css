@@ -95,25 +95,45 @@ input[type="search"] {
   padding: var(--spacing-base) var(--spacing-lg);
   gap: var(--spacing-base);
 }
-/* 공통 추천서적 */
-.book {
-  background-color: lightgreen;
+/* 공통 메인 콘텐츠 섹션 제목 */
+.appMain [class*="__title"] {
+  margin-bottom: var(--spacing-base);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  /* 그리드 사용시 */
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 30px; */
 }
-/* 공통 새소식 */
-.news {
-  background-color: yellow;
+.appMain [class*="__koTitle"] {
+  font-weight: 700;
+  font-size: var(--text-md);
+  color: var(--black);
 }
-/* 공통 게시판 */
-.board {
-  background-color: lightblue;
+.sprite {
+  height: 3.75rem;
+  padding-left: 4rem;
 }
-/* 공통 인기 사이트 */
-.favorite {
-  background-color: lightsalmon;
+.spriteNews {
+  color: var(--accent-news);
+  background: url(../images/sprite_main.png) no-repeat 0 -230px;
 }
-/* 공통 추천서적 */
-.twitter {
-  background-color: plum;
+.spriteBook {
+  color: var(--accent-book);
+  background: url(../images/sprite_main.png) no-repeat 0 0;
+}
+.spriteBoard {
+  color: var(--accent-board);
+  background: url(../images/sprite_main.png) no-repeat 0 -115px;
+}
+.spriteFavorite {
+  color: var(--accent-favorite);
+  background: url(../images/sprite_main.png) no-repeat 0 -345px;
+}
+.spriteTwitter {
+  color: var(--accent-twitter);
+  background: url(../images/sprite_main.png) no-repeat 0 -460px;
 }
 
 /* 모바일 디바이스 (Mobile Device) */
@@ -213,7 +233,7 @@ input[type="search"] {
   }
   /* 모바일 메인 콘텐츠 */
   .appMain {
-    /* grid-template: auto / 1fr 1fr;  */
+    grid-template: auto / 1fr;
   }
   /* 모바일 새소식 */
   .news {
@@ -272,8 +292,11 @@ input[type="search"] {
     padding: var(--spacing-base) var(--spacing-lg);
     text-shadow: 1px 1px 0 var(--black), -1px -1px 0 var(--black);
   }
-  /* 데스크탑 메인콘텐츠 */
+  /* 데스크탑 메인 콘텐츠 */
   .appMain {
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
     grid-template: auto / repeat(12, 1fr);
   }
   .news {
@@ -283,10 +306,10 @@ input[type="search"] {
     grid-area: 2/1/4/5;
   }
   .twitter {
-    grid-area: 2/5/2/10;
+    grid-area: 2/5/3/10;
   }
   .favorite {
-    grid-area: 2/10/2/-1;
+    grid-area: 2/10/3/-1;
   }
   .board {
     grid-area: 3/6/4/-1;
