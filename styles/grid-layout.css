@@ -1,25 +1,30 @@
-*{
+* {
   box-sizing: border-box;
 }
-body{
+body {
   margin: 0;
 }
-.group1{
+.group1 {
   background: gold;
+  grid-area: box1;
 }
-.group2{
+.group2 {
   background: rgb(61, 206, 45);
+  grid-area: box2;
 }
-.group3{
+.group3 {
   background: rgb(226, 108, 30);
+  grid-area: box3;
 }
-.group4{
+.group4 {
   background: rgb(19, 125, 97);
+  grid-area: box4;
 }
-.group5{
+.group5 {
   background: rgb(12, 12, 99);
+  grid-area: box5;
 }
-.group6{
+/* .group6{
   background: rgb(94, 18, 82);
 }
 .group7{
@@ -39,34 +44,56 @@ body{
 }
 .group12{
   background: rgb(191, 29, 255);
-}
-.container{
+} */
+.container {
   background: silver;
-  border: 1px solid red;
+  border: 5px solid black;
   display: grid;
-  grid-template-rows: auto;
-  padding: 24px;
+  grid-template-rows: repeat(3, 200px);
+  /* padding: 24px; */
   /* 너비가 늘어남 */
   /* gap: 24px; */
 }
-[class*="group"]{
-  height: 150px;
+[class*="group"] {
+  /* height: 150px; */
 }
+/* 모바일 */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "box1 box2"
+      "box1 box3"
+      "box4 box5";
+  }
+}
+
+/* 데스크탑 */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2"
+      "box1 box1 box1 box1 box3 box3 box3 box3 box3 box5 box5 box5"
+      "box1 box1 box1 box1 . box4 box4 box4 box4 box4 box4 box4";
+  }
+}
+
 /* 스몰 디바이스 */
-@media (max-width:767px){
-  .container{
-    grid-template-columns: 1fr;
+@media (max-width: 767px) {
+  .container {
+    /* grid-template-columns: 1fr; */
   }
 }
 /* 미디엄 디바이스 */
-@media (min-width:768px){
-  .container{
-    grid-template-columns: 1fr 1fr ;
+@media (min-width: 768px) {
+  .container {
+    /* grid-template-columns: 1fr 1fr ; */
   }
 }
 /* 라지 디바이스 */
-@media (min-width:1280px){
-  .container{
-    grid-template-columns: repeat(4, 1fr) ;
+@media (min-width: 1280px) {
+  .container {
+    /* grid-template-columns: repeat(4, 1fr) ; */
   }
 }
