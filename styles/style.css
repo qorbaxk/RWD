@@ -6,7 +6,8 @@
 
 /* 모든 디바이스 (All Device) */
 /* 공통 아이콘 (font awesome) */
-.far, .fas{
+.far,
+.fas {
   margin-right: var(--spacing-xs);
 }
 /* 공통 헤더 */
@@ -140,9 +141,10 @@ input[type="search"] {
   background: url(../images/sprite_main.png) no-repeat 0 -460px;
 }
 /* 공통 메인 콘텐츠 섹션 본문 */
-.appMain [class*="__summary"]{
+.appMain [class*="__summary"] {
   line-height: 1.5;
   margin-top: var(--spacing-base);
+  text-align: justify;
 }
 
 /* 새소식 */
@@ -151,7 +153,7 @@ input[type="search"] {
   text-align: right;
   margin-top: var(--spacing-xs);
 }
-.accentNews{
+.accentNews {
   color: var(--accent-news);
 }
 /* 영상을 iframe 태그로 삽입시 */
@@ -160,7 +162,7 @@ input[type="search"] {
   width: 100%;
   height: auto;
 } */
-.iframeWrapper{
+.iframeWrapper {
   /* position: relative;
   overflow: hidden;
   width: 100%;
@@ -168,7 +170,7 @@ input[type="search"] {
   padding-bottom: 56%; */
   aspect-ratio: 16/9;
 }
-iframe{
+iframe {
   /* position: absolute;
   top: 0;
   left: 0; */
@@ -177,39 +179,77 @@ iframe{
 }
 
 /* 추천 서적 */
-.book__cover{
+.book__cover {
   width: 80%;
   margin: 0 auto;
   text-align: center;
 }
-.book__coverCaption{
+.book__coverCaption {
   margin-top: var(--spacing-sm);
   line-height: 1.6;
 }
-.book__info{
+.book__info {
   text-align: center;
-  margin:var(--spacing-base) 0;
+  margin: var(--spacing-base) 0;
 }
-.book__info *{
+.book__info * {
   display: inline;
 }
-.ratingStar{
+.ratingStar {
   display: block;
   font-size: var(--text-xl);
 }
-.accentBook{
+.accentBook {
   color: var(--accent-book);
 }
 
 /* 트위터 */
-.accentTwitter{
+.accentTwitter {
   color: var(--accent-twitter);
 }
 
-
-
-
-
+/* 게시판 */
+.board {
+  display: flex;
+  flex-flow: row wrap;
+  overflow: hidden;
+}
+.board__title {
+  /* grow shrink basis
+  모자라면 줄이고 남으면 늘려라 이기 때문에 같이 적용되는 것이 아님 */
+  flex: 1 1 auto;
+}
+.board__list {
+  order: 1;
+  flex: 1 1 auto;
+  /* flex는 상하마진이 중첩되지 않음
+  때문에 item에 margin-top으로 다 주고 first-child의 margin을 없앨 것이
+  아니라 그냥 gap으로 처리*/
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+.board__item {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.board__link {
+  flex: 0 1 auto;
+  /* - 앞뒤로 공백 필수 */
+  width: calc(100% - 6.25rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.board__date {
+  flex: 0 0 auto;
+  width: 6.25rem;
+  text-align: right;
+}
+.board__more {
+  padding-top: var(--spacing-base);
+}
 
 /* 모바일 디바이스 (Mobile Device) */
 @media (min-width: 320px) and (max-width: 768px) {
@@ -315,12 +355,6 @@ iframe{
     /* grid-area: 1/1/2/3; */
   }
 }
-
-
-
-
-
-
 
 /* 데스크탑 디바이스 (Desktop Device) */
 @media (min-width: 769px) {
