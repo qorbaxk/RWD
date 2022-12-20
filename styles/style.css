@@ -233,22 +233,26 @@ iframe {
 .board__item {
   display: flex;
   flex-flow: row nowrap;
+  /* width값 지정하는 대신 간격주기 */
+  justify-content: space-between;
 }
 .board__link {
-  flex: 0 1 auto;
+  /* grow도 1로 둬서 클릭범위 늘리기 */
+  flex: 1 1 auto;
   /* - 앞뒤로 공백 필수 */
-  width: calc(100% - 6.25rem);
+  /* width: calc(100% - 6.25rem); */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .board__date {
+  /* width: 6.25rem; */
   flex: 0 0 auto;
-  width: 6.25rem;
   text-align: right;
 }
 .board__more {
   padding-top: var(--spacing-base);
+  /* height: fit-content; */
 }
 
 /* 모바일 디바이스 (Mobile Device) */
