@@ -136,6 +136,55 @@ input[type="search"] {
   background: url(../images/sprite_main.png) no-repeat 0 -460px;
 }
 
+/* 새소식 */
+.news__summary {
+  margin-top: var(--spacing-base);
+  line-height: 1.6;
+}
+.news__date {
+  display: block;
+  text-align: right;
+  margin-top: var(--spacing-xs);
+}
+.accentNews{
+  color: var(--accent-news);
+  margin-right: var(--spacing-xs);
+}
+
+/* 추천 서적 */
+.book__cover{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.book__coverCaption{
+  margin-top: var(--spacing-sm);
+  line-height: 1.6;
+}
+.book__info{
+  text-align: center;
+  margin:var(--spacing-base) 0;
+}
+.book__info *{
+  display: inline;
+}
+.ratingStar{
+  display: block;
+  font-size: var(--text-xl);
+}
+.accentBook{
+  color: var(--accent-book);
+}
+.book__summary{
+  line-height: 1.6;
+}
+
+
+
+
+
+
+
 /* 모바일 디바이스 (Mobile Device) */
 @media (min-width: 320px) and (max-width: 768px) {
   /* 모바일 헤더 */
@@ -240,6 +289,12 @@ input[type="search"] {
     /* grid-area: 1/1/2/3; */
   }
 }
+
+
+
+
+
+
 
 /* 데스크탑 디바이스 (Desktop Device) */
 @media (min-width: 769px) {
