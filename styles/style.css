@@ -5,6 +5,10 @@
 @import url(./base.css);
 
 /* 모든 디바이스 (All Device) */
+/* 공통 아이콘 (font awesome) */
+.far, .fas{
+  margin-right: var(--spacing-xs);
+}
 /* 공통 헤더 */
 .appHeader {
   position: relative;
@@ -135,12 +139,13 @@ input[type="search"] {
   color: var(--accent-twitter);
   background: url(../images/sprite_main.png) no-repeat 0 -460px;
 }
+/* 공통 메인 콘텐츠 섹션 본문 */
+.appMain [class*="__summary"]{
+  line-height: 1.5;
+  margin-top: var(--spacing-base);
+}
 
 /* 새소식 */
-.news__summary {
-  margin-top: var(--spacing-base);
-  line-height: 1.6;
-}
 .news__date {
   display: block;
   text-align: right;
@@ -148,7 +153,27 @@ input[type="search"] {
 }
 .accentNews{
   color: var(--accent-news);
-  margin-right: var(--spacing-xs);
+}
+/* 영상을 iframe 태그로 삽입시 */
+/* 가로는 되지만 높이는 조절되지 않음 */
+/* iframe{
+  width: 100%;
+  height: auto;
+} */
+.iframeWrapper{
+  /* position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 0 !important;
+  padding-bottom: 56%; */
+  aspect-ratio: 16/9;
+}
+iframe{
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  width: 100%;
+  height: 100%;
 }
 
 /* 추천 서적 */
@@ -175,10 +200,11 @@ input[type="search"] {
 .accentBook{
   color: var(--accent-book);
 }
-.book__summary{
-  line-height: 1.6;
-}
 
+/* 트위터 */
+.accentTwitter{
+  color: var(--accent-twitter);
+}
 
 
 
