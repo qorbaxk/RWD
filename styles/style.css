@@ -203,11 +203,6 @@ iframe {
   color: var(--accent-book);
 }
 
-/* 트위터 */
-.accentTwitter {
-  color: var(--accent-twitter);
-}
-
 /* 게시판 */
 .board {
   display: flex;
@@ -253,6 +248,44 @@ iframe {
 .board__more {
   padding-top: var(--spacing-base);
   /* height: fit-content; */
+}
+
+/* 인기 사이트 */
+.accentFavorite {
+  color: var(--accent-favorite);
+}
+
+/* 트위터 */
+
+.accentTwitter {
+  color: var(--accent-twitter);
+}
+.twitter__userInfo {
+  display: inline-flex;
+  gap: var(--spacing-xs);
+}
+
+.twitter__userProfile {
+  float: right;
+  shape-outside: circle(50%);
+  /* ratio 사용할때 너무 커질 수도 있으니, min max를 정해줌 */
+  width: 25%;
+  min-width: 3.125rem;
+  max-width: 6.25rem;
+  aspect-ratio: 1/1;
+  margin-left: var(--spacing-xs);
+}
+.twitter__userProfileImage {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 30% 40%;
+}
+.twitter__date {
+  margin-top: var(--spacing-xs);
+  display: block;
 }
 
 /* 모바일 디바이스 (Mobile Device) */
@@ -354,9 +387,26 @@ iframe {
   .appMain {
     grid-template: auto / 1fr;
   }
-  /* 모바일 새소식 */
-  .news {
-    /* grid-area: 1/1/2/3; */
+  /* 모바일 인기 사이트 */
+  .favorite {
+    overflow: hidden;
+  }
+  .favorite__list {
+    width: 100%;
+  }
+  .favorite__item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  .favorite__item * {
+    flex: 1 1 auto;
+  }
+  .favorite__link::after {
+    font-size: var(--text-sm);
+    content: attr(data-tooltip);
+    color: var(--accent-favorite);
+    margin-left: var(--spacing-xs);
   }
 }
 
