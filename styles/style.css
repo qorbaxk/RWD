@@ -288,8 +288,12 @@ iframe {
   display: block;
 }
 
+
+
+
+
 /* 모바일 디바이스 (Mobile Device) */
-@media (min-width: 320px) and (max-width: 768px) {
+@media (min-width: 320px) and (max-width: 640px) {
   /* 모바일 헤더 */
   .appHeader {
     background: var(--primary-color);
@@ -388,6 +392,136 @@ iframe {
     grid-template: auto / 1fr;
   }
   /* 모바일 인기 사이트 */
+  .favorite {
+    overflow: hidden;
+  }
+  .favorite__list {
+    width: 100%;
+  }
+  .favorite__item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  .favorite__item * {
+    flex: 1 1 auto;
+  }
+  .favorite__link::after {
+    font-size: var(--text-sm);
+    content: attr(data-tooltip);
+    color: var(--accent-favorite);
+    margin-left: var(--spacing-xs);
+  }
+}
+
+/* 태블릿 디바이스 (Tablet Device) */
+@media (min-width: 640px) and (max-width: 769px) {
+  /* 태블릿 헤더 */
+  .appHeader {
+    background: var(--primary-color);
+    color: var(--white);
+  }
+  /* 태블릿 멤버서비스 */
+  .memberOnly {
+    order: -1;
+    font-size: var(--text-sm);
+  }
+  /* 태블릿 검색 폼 */
+  .searchForm__group .formInput {
+    flex-grow: 1;
+  }
+  /* 태블릿 메뉴 제어 버튼 */
+  .buttonWrapper {
+    padding: var(--spacing-xxs);
+    overflow: hidden;
+    position: absolute;
+    top: 3.75rem;
+    right: var(--spacing-lg);
+    transform: translate(var(--spacing-xxs), -var(--spacing-xxs));
+  }
+
+  .button--burger {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .button--burger:focus {
+    outline-offset: 2px;
+  }
+
+  [class*="button--burgerBar"] {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background: var(--white);
+    border-radius: var(--spacing-xxs);
+    left: 0;
+    transition: all 200ms;
+    pointer-events: none;
+  }
+
+  .button--burgerBarTop {
+    top: 0;
+  }
+
+  .button--burgerBarMiddle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .button--burgerBarBottom {
+    top: 100%;
+    transform: translateY(-100%);
+  }
+
+  .button--burger.is--active .button--burgerBarMiddle {
+    transform: translate(-150%, -50%);
+  }
+
+  .button--burger.is--active .button--burgerBarTop {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .button--burger.is--active .button--burgerBarBottom {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  /* 태블릿 메인 메뉴 */
+  .menu__list {
+    background: var(--white-opacity);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    transform: translateX(-150%);
+    padding: var(--spacing-lg);
+  }
+  .menu.is--active .menu__list {
+    transform: none;
+  }
+  .menu__item {
+    border-bottom: 1px solid var(--silver);
+  }
+  /* 태블릿 메인 콘텐츠 */
+  .appMain {
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+  }
+  /* 태블릿 추천 서적 */
+  .book {
+    order: 1;
+  }
+  /* 태블릿 새 소식 */
+  .news {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  /* 태블릿 인기사이트 */
   .favorite {
     overflow: hidden;
   }
